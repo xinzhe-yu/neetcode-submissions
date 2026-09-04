@@ -1,0 +1,17 @@
+
+
+class Solution {
+public:
+    vector<int> replaceElements(vector<int>& arr) {
+        int running_max = -1;
+        int n = arr.size() -1;
+        for (int i = n; i >= 0; i--) {
+            int temp = arr[i];
+            arr[i] = running_max;
+            running_max = std::max(temp, running_max);
+            
+        }
+
+        return arr;
+    }
+};
